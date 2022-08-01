@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('management','App\Http\Controllers\Management');
+Route::resource('management','App\Http\Controllers\ManagementController');
