@@ -7,79 +7,70 @@ use Illuminate\Http\Request;
 
 class ManagementController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $employees = Managment::latest()->paginate(5);
+        return view('management.index',compact('management'))
+        ->with('i', (request()->input('page',1)-1)*5);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('employees.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+            'name' => 'required',
+            'job_title' => 'required',
+            'grade' => 'required',
+            'comment' => 'required',
+        ]);
+    
+
+      Management::create($request->all());
+
+      return redirect()->route('management.index')
+
+      ->with('success', 'Employee created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Management  $management
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Management $management)
-    {
-        //
-    }
+public function show(Employee $employee) 
+{
+    return view('employees.show',compact('employee'));
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Management  $management
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Management $management)
-    {
-        //
-    }
+}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Management  $management
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Management $management)
-    {
-        //
-    }
+public function edit(Employee $employee)
+{
+    return view('employees.edit',compact('employee'));
+}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Management  $management
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Management $management)
-    {
-        //
-    }
+public function update(Request $request, Employee $employee)
+{
+    $request->validate([
+ 
+    ]);
+
+    $employee->update($request->all());
+
+    return redirect()->route('employees.index')
+        ->with('success', 'Employee updated successfully');
+
+}
+
+public function destroy(Employee $employee)
+{
+    $employee->delete();
+
+   
+return redirect()->route('employees.index')
+
+->with('success', 'Employee deleted successfully');
+
+}
+
 }
