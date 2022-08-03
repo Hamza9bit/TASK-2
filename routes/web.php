@@ -21,17 +21,6 @@ Route::get('/dashboard', function() {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
 
 Route::resource('management','App\Http\Controllers\ManagementController');
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
