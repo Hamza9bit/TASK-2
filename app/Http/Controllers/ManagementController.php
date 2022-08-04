@@ -9,7 +9,7 @@ class ManagementController extends Controller
 {
     public function index()
     {
-        $employees = Managment::latest()->paginate(5);
+        $management = Managment::latest()->paginate(5);
         return view('management.index',compact('management'))
         ->with('i', (request()->input('page',1)-1)*5);
     }
@@ -38,36 +38,36 @@ class ManagementController extends Controller
       ->with('success', 'Employee created successfully.');
     }
 
-public function show(Employee $employee) 
+public function show(Management $management) 
 {
     return view('employees.show',compact('employee'));
 
 }
 
-public function edit(Employee $employee)
+public function edit(Management $management)
 {
     return view('employees.edit',compact('employee'));
 }
 
-public function update(Request $request, Employee $employee)
+public function update(Request $request, Management $management)
 {
     $request->validate([
  
     ]);
 
-    $employee->update($request->all());
+    $management->update($request->all());
 
-    return redirect()->route('employees.index')
+    return redirect()->route('management.index')
         ->with('success', 'Employee updated successfully');
 
 }
 
-public function destroy(Employee $employee)
+public function destroy(Management $employee)
 {
-    $employee->delete();
+    $management->delete();
 
    
-return redirect()->route('employees.index')
+return redirect()->route('management.index')
 
 ->with('success', 'Employee deleted successfully');
 
