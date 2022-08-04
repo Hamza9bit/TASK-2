@@ -61,8 +61,15 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Job Title</strong>
+                <input type="text" name="job_title" class="form-control" placeholder="Admin etc.">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-11 col-md-12">
+            <button type="submit" class="btn btn-primary">  Submit</button>
         </div>
     </div<>
 

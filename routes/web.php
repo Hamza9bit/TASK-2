@@ -28,4 +28,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::resource('management','App\Http\Controllers\ManagementController');
+Route::resource('management', \App\Http\Controllers\ManagementController::class);
+Route::get('management/evaluate', [\App\Http\Controllers\ManagementController::class, 'evaluate']);
+
+Route::resource('management', 'App\Http\Controllers\ManagementController');
+

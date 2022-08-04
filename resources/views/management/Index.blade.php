@@ -2,14 +2,16 @@
 
 @section('content') 
 
+<div class="p-3 mb-2 bg-dark text-white">
+
 <div style="height: 30px;"></div>
 
 <div class = "float-left">
-    <h2>&nbsp&nbspManage Employees&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <h2>&nbsp&nbspEmployee Evaluation Management System&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h2>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    </h2>
 </div>
 
 <div class = "row" style="height: 80px;">
@@ -17,7 +19,7 @@
 
         <div class = "float-left" >
 
-        <a class = "btn btn-success" href="{{route('employees.create') }}"> Add New Employee</a>
+        <a class = "btn btn-success" href="{{route('management.create') }}"> Add New Employee</a>
         </div>
     </div>
 </div>
@@ -31,7 +33,7 @@
 
 @endif
 
-<table class="table table-bordered">
+<table class="table table-bordered table-dark">
 
     <tr>
         <th>No</th>
@@ -55,11 +57,11 @@
         <td>
             <form action="{{ route('management.destroy',$management->id) }}" method = "POST">
 
-                  <!-- <a class="btn btn-info" href="{{ route('employees.show', $employee->id) }}">View</a> -->
+                  <!-- <a class="btn btn-info" href="{{ route('management.show', $management->id) }}">View</a> -->
 
                   <a class="btn btn-primary" href="{{ route('management.edit', $management->id) }}">Edit</a>
 
-                  <a class="btn btn-primary" href="{{ route('management.evaluate', $management->id) }}">Evaluate</a>
+                  <a class="btn btn-warning" href="{{ route('management.show', $management->id) }}">Evaluate</a>
 
                   @csrf
 
@@ -74,5 +76,6 @@
     @endforeach
 
 </table>
+</div>
 
 

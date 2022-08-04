@@ -9,25 +9,27 @@ class ManagementController extends Controller
 {
     public function index()
     {
-        $management = Managment::latest()->paginate(5);
+        $management = Management::latest()->paginate(5);
         return view('management.index',compact('management'))
         ->with('i', (request()->input('page',1)-1)*5);
     }
 
     public function create()
     {
-        return view('employees.create');
+        return view('management.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'email' => 'required',
-            'password' => 'required',
+            //'password' => 'required',
             'name' => 'required',
             'job_title' => 'required',
-            'grade' => 'required',
-            'comment' => 'required',
+            //'grade' => 'required',
+            //'comment' => 'required',
+            'Address' => 'required',
+            'Phone' => 'required'
         ]);
     
 
@@ -35,12 +37,12 @@ class ManagementController extends Controller
 
       return redirect()->route('management.index')
 
-      ->with('success', 'Employee evaluated successfully.');
+      ->with('success', 'Employee created successfully.');
     }
 
 public function show(Management $management) 
 {
-    return view('management.show',compact('management'));
+    return view('management.evaluate',compact('management'));
 
 }
 
@@ -48,6 +50,7 @@ public function edit(Management $management)
 {
     return view('management.edit',compact('management'));
 }
+
 
 public function evaluate(Management $management)
 {
@@ -67,7 +70,7 @@ public function update(Request $request, Management $management)
 
 }
 
-public function destroy(Management $employee)
+public function destroy(Management $management)
 {
     $management->delete();
 
@@ -77,5 +80,6 @@ return redirect()->route('management.index')
 ->with('success', 'Employee deleted successfully');
 
 }
+
 
 }
