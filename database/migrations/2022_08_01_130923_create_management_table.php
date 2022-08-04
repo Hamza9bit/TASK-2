@@ -18,10 +18,15 @@ return new class extends Migration
             $table->string('email');
             $table->string('name');
             $table->string('job_title');
-            $table->string('grade')->default('null');
-            $table->string('comment')->default('null');;
+            $table->string('grade')->default(' ');
+            $table->string('comment')->default(' ');;
             $table->string('Address');
             $table->string('Phone');
+            $table->boolean('Report1')->default(false);
+            $table->boolean('Report2')->default(false);
+            $table->boolean('Report3')->default(false);
+            $table->boolean('Report4')->default(false);
+            $table->boolean('Report5')->default(false);
             $table->timestamps();
         });
     }

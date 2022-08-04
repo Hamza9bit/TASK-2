@@ -2,14 +2,17 @@
 
 @section('content')
 
-<div style="height: 30px;"></div>
+<div class="text-white">
+<div style="height: 700px; width:500px; background-color:#52617F;">
+
+<div style="color: Black; position: absolute; top: 15px; left: 20px; margin: 0;">
+        <a class="btn btn-secondary" href="{{ route('management.index')}}">Back</a>
+ </div> 
+
+<div style="height: 60px;"></div>
 
 <div class="row">
     <div class = "col-lg-12 margin-tb">
-    <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('management.index')}}">Back</a>
-            </div>  
-    </div>
 </div>
 
 @if ($errors->any())
@@ -43,21 +46,21 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Email</strong>
-                <input type="text" name="email" class="form-control" placeholder="jhonappleased@mail.com">
+                <input type="text" name="email" class="form-control" placeholder="johnappleased@mail.com">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Address</strong>
-                <input type="text" name="Address" class="form-control" placeholder="Address">
+                <input type="text" name="Address" class="form-control" placeholder="House no#..">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Phone</strong>
-                <input type="text" name="Phone" class="form-control" placeholder="Phone">
+                <input type="text" name="Phone" class="form-control" placeholder="+92-XXX-XXXXXXX">
             </div>
         </div>
 
@@ -68,8 +71,10 @@
             </div>
         </div>
 
+        <div style="height: 30px;"></div>
+
         <div class="col-xs-12 col-sm-11 col-md-12">
-            <button type="submit" class="btn btn-primary">  Submit</button>
+            <button type="submit" class="btn btn-dark">  Submit</button>
         </div>
     </div<>
 

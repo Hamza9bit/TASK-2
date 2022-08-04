@@ -2,7 +2,14 @@
 
 @section('content')
 
-<div style="height: 30px;"></div>
+<div class="text-white">
+<div style="height: 700px; width:500px; background-color:#52617F;">
+
+<div style="color: Black; position: absolute; top: 15px; left: 20px; margin: 0;">
+        <a class="btn btn-secondary" href="{{ route('management.index')}}">Back</a>
+ </div> 
+
+<div style="height: 60px;"></div>
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -11,10 +18,7 @@
             </div>
 
             <div style="height: 10px;"></div>
-
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('management.index')}}">Back</a>
-            </div>  
+ 
         </div>
     </div>
 
@@ -48,7 +52,7 @@
                 <div class="form-group">
                     <strong>Name:</strong>
 
-                    <input type="text" name="name" value="{{ $management->name }}" class="form-control" placeholder="Name">
+                    <input type="text" name="name" value="{{ $management->name }}" class="form-control" placeholder="Enter Name">
                 </div>
             </div>
 
@@ -56,7 +60,7 @@
                 <div class="form-group">
                     <strong>Email:</strong>
 
-                    <input type="text" name="email" value="{{ $management->email }}" class="form-control" placeholder="Email">
+                    <input type="text" name="email" value="{{ $management->email }}" class="form-control" placeholder="Enter Email">
                 </div>
             </div>
 
@@ -64,7 +68,7 @@
                 <div class="form-group">
                     <strong>Address:</strong>
 
-                    <input type="text" name="Address" value="{{ $management->Address }}" class="form-control" placeholder="Address">
+                    <input type="text" name="Address" value="{{ $management->Address }}" class="form-control" placeholder="Enter Address">
                 </div>
             </div>
 
@@ -72,12 +76,12 @@
                 <div class="form-group">
                     <strong>Phone:</strong>
 
-                    <input type="text" name="Phone" value="{{ $management->Phone }}" class="form-control" placeholder="Phone">
+                    <input type="text" name="Phone" value="{{ $management->Phone }}" class="form-control" placeholder="Enter Phone">
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-dark">Submit</button>
             </div>
          </div>
 
