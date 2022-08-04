@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('job_title');
             $table->string('grade');
             $table->string('comment');
+            $table->string('Address');
+            $table->string('Phone');
             $table->timestamps();
         });
     }

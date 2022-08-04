@@ -35,18 +35,23 @@ class ManagementController extends Controller
 
       return redirect()->route('management.index')
 
-      ->with('success', 'Employee created successfully.');
+      ->with('success', 'Employee evaluated successfully.');
     }
 
 public function show(Management $management) 
 {
-    return view('employees.show',compact('employee'));
+    return view('management.show',compact('management'));
 
 }
 
 public function edit(Management $management)
 {
-    return view('employees.edit',compact('employee'));
+    return view('management.edit',compact('management'));
+}
+
+public function evaluate(Management $management)
+{
+    return view('management.evaluate',compact('management'));
 }
 
 public function update(Request $request, Management $management)
@@ -58,7 +63,7 @@ public function update(Request $request, Management $management)
     $management->update($request->all());
 
     return redirect()->route('management.index')
-        ->with('success', 'Employee updated successfully');
+        ->with('success', 'Updated successfully');
 
 }
 
