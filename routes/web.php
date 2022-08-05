@@ -21,7 +21,6 @@ Route::get('/dashboard', function() {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//require __DIR__.'/auth.php';
 
 Auth::routes();
 
@@ -32,4 +31,6 @@ Route::resource('management', \App\Http\Controllers\ManagementController::class)
 Route::get('management/evaluate', [\App\Http\Controllers\ManagementController::class, 'evaluate']);
 
 Route::resource('management', 'App\Http\Controllers\ManagementController');
+
+Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 
