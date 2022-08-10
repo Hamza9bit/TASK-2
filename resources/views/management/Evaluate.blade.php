@@ -60,13 +60,14 @@
         <div style="height: 40px; position: absolute; top: 220px; left: 555px; margin: 0">
             
                <label class="radio-inline">
-                 <input type="radio" id="smt-fld-1-2" value="{{ $management->Report1 }}" name="Report1"></label>
+                 <input type="radio" id="smt-fld-1-2" value="0" name="Report1" {{ ($management->Report1 == 0) ? "checked":""}} ></label>
+                 
 
         </div>         
         <div style="height: 40px; position: absolute; top: 220px; left: 785px; margin: 0">
      
                 <label class="radio-inline">
-                <input type="radio" id="smt-fld-1-3" value="{{ $management->Report1 }}" name="Report1"></label>
+                <input type="radio" id="smt-fld-1-2" value="1" name="Report1" {{ ($management->Report1 == 1) ? "checked":""}} ></label>
             
 
         </div>
@@ -77,13 +78,13 @@
         <div style="height: 40px; position: absolute; top: 280px; left: 555px; margin: 0">
             
                <label class="radio-inline">
-                 <input type="radio" id="smt-fld-1-2" value="{{ $management->Report2 }}" name="Report2"></label>
+               <input type="radio" id="smt-fld-1-2" value="0" name="Report2" {{ ($management->Report2 == 0) ? "checked":""}} ></label>
 
         </div>         
         <div style="height: 40px; position: absolute; top: 280px; left: 785px; margin: 0">
      
                 <label class="radio-inline">
-                <input type="radio" id="smt-fld-1-3" value="{{ $management->Report2 }}" name="Report2"></label>
+                <input type="radio" id="smt-fld-1-2" value="1" name="Report2" {{ ($management->Report2 == 1) ? "checked":""}} ></label>
             
 
         </div>
@@ -94,13 +95,13 @@
         <div style="height: 40px; position: absolute; top: 340px; left: 555px; margin: 0">
             
                <label class="radio-inline">
-                 <input type="radio" id="smt-fld-1-2" value="{{ $management->Report3 }}" name="Report3"></label>
+               <input type="radio" id="smt-fld-1-2" value="0" name="Report3" {{ ($management->Report3 == 0) ? "checked":""}} ></label>
 
         </div>         
         <div style="height: 40px; position: absolute; top: 340px; left: 785px; margin: 0">
      
                 <label class="radio-inline">
-                <input type="radio" id="smt-fld-1-3" value="{{ $management->Report3 }}" name="Report3"></label>
+                <input type="radio" id="smt-fld-1-2" value="1" name="Report3" {{ ($management->Report3 == 1) ? "checked":""}} ></label>
             
 
         </div>
@@ -111,13 +112,13 @@
         <div style="height: 40px; position: absolute; top: 400px; left: 555px; margin: 0">
             
                <label class="radio-inline">
-                 <input type="radio" id="smt-fld-1-2" value="{{ $management->Report4}}" name="Report4"></label>
+               <input type="radio" id="smt-fld-1-2" value="0" name="Report4" {{ ($management->Report4 == 0) ? "checked":""}} ></label>
 
         </div>         
         <div style="height: 40px; position: absolute; top: 400px; left: 785px; margin: 0">
      
                 <label class="radio-inline">
-                <input type="radio" id="smt-fld-1-3" value="{{ $management->Report4 }}" name="Report4"></label>
+                <input type="radio" id="smt-fld-1-2" value="1" name="Report4" {{ ($management->Report4 == 1) ? "checked":""}} ></label>
             
 
         </div>
@@ -128,13 +129,13 @@
         <div style="height: 40px; position: absolute; top: 460px; left: 555px; margin: 0">
             
                <label class="radio-inline">
-                 <input type="radio" id="smt-fld-1-2" value="{{ $management->Report5 }}" name="Report5"></label>
+               <input type="radio" id="smt-fld-1-2" value="0" name="Report5" {{ ($management->Report5 == 0) ? "checked":""}} ></label>
 
         </div>         
         <div style="height: 40px; position: absolute; top: 460px; left: 785px; margin: 0">
      
                 <label class="radio-inline">
-                <input type="radio" id="smt-fld-1-3" value="{{ $management->Report5 }}" name="Report5"></label>
+                <input type="radio" id="smt-fld-1-2" value="1" name="Report5" {{ ($management->Report5 == 1) ? "checked":""}} ></label>
             
 
         </div>

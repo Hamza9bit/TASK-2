@@ -35,9 +35,13 @@ class ManagementController extends Controller
 
       Management::create($request->all());
 
-      return redirect()->route('management.index')
+      echo "<pre>";
 
-      ->with('success', 'Employee created successfully.');
+      echo $request;
+
+      //return redirect()->route('management.index')
+
+      //->with('success', 'Employee created successfully.');
     }
 
 public function show(Management $management) 
@@ -64,8 +68,10 @@ public function update(Request $request, Management $management)
     ]);
 
     $management->update($request->all());
+    //echo "<pre>";
 
-    return redirect()->route('management.index')
+    //echo $request;
+   return redirect()->route('management.index')
         ->with('success', 'Updated successfully');
 
 }
